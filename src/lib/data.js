@@ -1,4 +1,4 @@
-import { connectToDb } from "./connectToDB";
+import { connectToDb } from "./connectToDb";
 import { Post, User } from "./models";
 import {unstable_noStore as noStore} from "next/cache"
 

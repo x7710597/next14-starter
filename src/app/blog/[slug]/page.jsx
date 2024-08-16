@@ -4,14 +4,38 @@ import Image from "next/image"
 import {Suspense} from "react"
 import { getPost } from "@/lib/data";
 
+const getData = async (slug) => {
+  const resp = await fetch(`http://localhost:3000/api/blog/${slug}`)
+  if(!resp.ok) {
+    throw new Error("something went wrong");
+  }
+
+  return resp.json()
+}
+
+//same route but different fetching method
 // const getData = async (slug) => {
-//   const resp = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`)
+//   const resp = await fetch(`http://localhost:3000/api/blog/${slug}`,{method: DELETE})
 //   if(!resp.ok) {
 //     throw new Error("something went wrong");
 //   }
 
 //   return resp.json()
 // }
+
+
+
+export const generateMetadata = async ({params}) => {
+  const {slug} = params
+  // const post = await getPost(slug)
+  const post = await getData(slug)
+
+  return {
+    title: post.title,
+    description: post.desc,
+  }
+
+}
 
 const SinglePostPage = async ({params}) => {
 
