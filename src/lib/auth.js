@@ -4,6 +4,8 @@ import CredentialsProvider from "next-auth/providers/credentials" // to let auth
 import { connectToDb } from "./connectToDb"
 import { User } from "./models"
 import bcrypt from "bcryptjs"
+import { authConfig } from "./auth.config"
+
 
 
 const login = async (credentials) => {
@@ -31,9 +33,11 @@ const login = async (credentials) => {
 //auth method to get user's session info. signIn, signOut method to login and logout
 export const {
   handlers: {GET, POST},
-  auth, signIn, signOut } = NextAuth({
+  auth, signIn, signOut }
+  = NextAuth({
+  ...authConfig,
   providers:[
-  GitHub({
+  GitHub({ //github provider will override the provider in authConfig, we can override this below in our callbacks
   clientId: process.env.GITHUB_ID,
   clientSecret: process.env.GITHUB_SECRET
   }),
@@ -76,8 +80,10 @@ export const {
       }
       return true
       // if(account.provider === "github") &&  if(!user) return true
-    }
-  }
+    },
+    ...authConfig.callbacks, //here to override
+
+  },
 })
 
 // console.log(user, account, profile) returns:

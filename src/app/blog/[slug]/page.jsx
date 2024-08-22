@@ -2,7 +2,7 @@ import PostUser from "@/components/postUser/PostUser";
 import styles from "./singlePost.module.css"
 import Image from "next/image"
 import {Suspense} from "react"
-import { getPost } from "@/lib/data";
+// import { getPost } from "@/lib/data";
 
 const getData = async (slug) => {
   const resp = await fetch(`http://localhost:3000/api/blog/${slug}`)
@@ -40,19 +40,18 @@ export const generateMetadata = async ({params}) => {
 const SinglePostPage = async ({params}) => {
 
   const {slug} = params
-  // const post = await getData(slug)
-  const post = await getPost(slug)
+  // FETCH DATA WITH AN API
+  const post = await getData(slug);
 
+  // FETCH DATA WITHOUT AN API
+  // const post = await getPost(slug);
   return (
     <div className={styles.container}>
-    { post.img && <div className={styles.imgContainer}>
-        <Image
-          src={post.img}
-          alt=""
-          fill
-          className={styles.img}
-          />
-      </div>}
+    {post?.img && (
+        <div className={styles.imgContainer}>
+          <Image src={post.img} alt="" fill className={styles.img} />
+        </div>
+      )}
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.detail}>

@@ -1,18 +1,18 @@
-import { handleGithubLogin, handleLogin } from '@/lib/action'
-// import { auth } from '@/lib/auth'
+import LoginForm from '@/components/loginForm/loginForm'
+import { handleGithubLogin } from '@/lib/action'
+import styles from "./login.module.css"
 
-const LoginPage = async () => {
-
+const LoginPage = () => {
+  // auth?.user && router.push("/") we could do this after a user logins in, also if it's admin or not
+  //auth?.user?.isAdmin
   return (
-    <div>
-      <form action={handleGithubLogin}>
-        <button>Login with Github</button>
-      </form>
-      <form action={handleLogin}>
-        <input type="text" name="username" id="username" placeholder='username' />
-        <input type="password" name='password' placeholder='password'/>
-        <button>Login with credentials</button>
-      </form>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <form action={handleGithubLogin}>
+          <button className={styles.github}>Login with Github</button>
+        </form>
+        <LoginForm />
+      </div>
     </div>
   )
 }
