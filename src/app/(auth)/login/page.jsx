@@ -19,15 +19,3 @@ const LoginPage = () => {
 }
 
 export default LoginPage
-
-// session returns:
-// {
-//   user: {
-//     name: 'Mia L',
-//     username: 'miapeisun@gmail.com',
-//     image: 'https://avatars.githubusercontent.com/u/108651937?v=4'
-//   },
-//   expires: '2024-09-12T13:53:09.071Z'
-// }
-//with auth.js we don't need to worry about tokens, cookies, auth.js does everything for us, but if we use a custom authentication
-//we don't need to create the api auth route, but for all other providers we need to use a auth route
