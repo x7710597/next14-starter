@@ -4,13 +4,12 @@ import styles from './loginForm.module.css'
 import { handleLogin } from "@/lib/action"
 import { useFormState } from 'react-dom'
 
-import { useRouter } from "next/navigation"
+// import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { useEffect } from "react"
 
 const LoginForm = () => {
   const [state, formAction] = useFormState(handleLogin, undefined)
-  const router = useRouter()
+  // const router = useRouter()
 
   // useEffect(() => {
   //   state?.success && router.push("/login")
