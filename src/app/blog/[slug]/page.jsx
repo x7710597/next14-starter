@@ -5,7 +5,7 @@ import {Suspense} from "react"
 // import { getPost } from "@/lib/data";
 
 const getData = async (slug) => {
-  const resp = await fetch(`http://localhost:3000/api/blog/${slug}`)
+  const resp = await fetch(`https://blogsite-next.netlify.app/api/blog/${slug}`)
   if(!resp.ok) {
     throw new Error("something went wrong");
   }

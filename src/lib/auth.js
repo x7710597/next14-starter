@@ -53,7 +53,7 @@ export const {
   })
   ],
   callbacks: {
-    async signIn({user, account, profile}) {
+    async signIn({account, profile}) {
       // console.log(user, account, profile)
 
       if(account.provider === "github") {
@@ -90,7 +90,7 @@ export const {
 // {
 //   user: {
 //     name: 'Mia L',
-//     email: 'miapeisun@gmail.com',
+//     email: 'miapsagmail.com',
 //     image: 'https://avatars.githubusercontent.com/u/108651937?v=4'
 //   },
 //   expires: '2024-09-12T14:35:22.667Z'
@@ -104,7 +104,7 @@ export const {
 //   user: {
 //     id: '60110c07-044a-4ca7-8ed9-a20961ac00f4',
 //     name: 'Mia L',
-//     email: 'miapeisun@gmail.com',
+//     email: 'miapsagmail.com',
 //     image: 'https://avatars.githubusercontent.com/u/108651937?v=4'
 //   },
 //   account: {
@@ -116,8 +116,8 @@ export const {
 //     providerAccountId: '108651937'
 //   },
 //   profile: {
-//     login: 'x7710597',
-//     id: 108651937,
+//     login: 'x77105',
+//     id: 10867,
 //     node_id: 'U_kgDOBnnloQ',
 //     avatar_url: 'https://avatars.githubusercontent.com/u/108651937?v=4',
 //     gravatar_id: '',
@@ -138,7 +138,7 @@ export const {
 //     company: null,
 //     blog: '',
 //     location: null,
-//     email: 'miapeisun@gmail.com',
+//     email: 'miapsagmail.com',
 //     hireable: null,
 //     bio: null,
 //     twitter_username: null,
