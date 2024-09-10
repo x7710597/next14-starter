@@ -25,7 +25,6 @@ export const authConfig = {
       const isOnBlogPage = request.nextUrl?.pathname.startsWith("/blog")
       const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login")
       // console.log(auth)
-      // return true
 
       //ONLY ADMIN CAN REACH ADMIN DASHBOARD
       if(isOnAdminPanel && !user?.isAdmin) {

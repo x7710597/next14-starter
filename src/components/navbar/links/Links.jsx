@@ -24,11 +24,7 @@ const links = [
 ]
 const Links = ({session}) => {
   const [open, setOpen] = useState(false)
-  //Temporary
-  // const session = true;
-  // const isAdmin = true;
 
-  // const isAdmin = true;
 
   return (
 

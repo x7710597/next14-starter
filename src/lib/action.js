@@ -16,7 +16,8 @@ export const addPost = async (prevState, formData) => {
   // const userId = formData.get("userId")
 
   //destructuring:
-  const {title, desc, slug, userId} = Object.fromEntries(formData) //Object.fromEntries(iterable)  because formData is an iterable of key-value pairs.
+  const {title, desc, slug, userId} = Object.fromEntries(formData)
+  //Object.fromEntries(iterable)  because formData is an iterable of key-value pairs.
 
   try {
     connectToDb()
