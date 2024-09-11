@@ -10,7 +10,7 @@ import { handleLogout } from '@/lib/action'
 const links = [
 
   {title: "Home Page",
-    path: "https://blogsite-next.netlify.app",
+    path: "/",
   },
   {title: "About",
     path: "/about"
@@ -41,7 +41,7 @@ const Links = ({session}) => {
               <button className={styles.logout}>Logout</button>
             </form>
             </>
-          ) : ( <NavLink item={{title: "Login", path:"https://blogsite-next.netlify.app/login"} }/> )
+          ) : ( <NavLink item={{title: "Login", path:"/login"} }/> )
         }
       </div>
       { open &&

@@ -1,6 +1,5 @@
 import styles from "./register.module.css"
 import RegisterForm from "../../../components/registerForm/RegisterForm"
-// '@/components/registerForm/registerForm'
 
 const RegisterPage = () => {
   return (
