@@ -6,7 +6,7 @@ import PostCard from "@/components/postCard/PostCard"
 
 const getData = async () => {
   // "http://localhost:3000/api/blog"
-  const resp = await fetch("https://blogsite-next.netlify.app/api/blog", {next:{revalidate: 3600}})
+  const resp = await fetch("https://blog-site-three-sandy.vercel.app/api/blog", {next:{revalidate: 3600}})
 
   if(!resp.ok) {
     throw new Error("something went wrong");
