@@ -1,79 +1,31 @@
-:root {
-  --bg: #0d0c22;
-  --bgSoft: #2d2b42 ;
-  --text: white;
-  --testSoft: #e5e5e5;
-  --btn: #3673fd;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  background-color: var(--bg);
-  color: var(--text);
-}
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  width: 1536px;
-  margin: auto;
-  /* padding-inline: 35px; */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-}
-
-/* Instead of resizing all elements, resize the main wrapping element */
-
-@media(max-width: 1536px) {
-  .container{
-    width: 1366px;
-
+@layer base {
+  * {
+    @apply box-border m-0 p-0;
+  }
+  html {
+    @apply scroll-smooth;
   }
 }
-@media(max-width: 1366px) {
-  .container{
-    width: 1280px;
-  }
 
-}
-@media(max-width: 1280px) {
-  .container{
-    width: 1024px;
+/* @layer components {
+  .max-container {
+    @apply max-w-[1440px] mx-auto;
   }
+} */
 
-}
-@media(max-width: 1024px) {
-  .container{
-    width: 768px;
-  }
 
-}
-@media(max-width: 768px) {
-  .container{
-    width: 640px;
-  }
 
-}
-@media(max-width: 640px) {
-  .container{
-    width: 475px;
-  }
-
-}
-@media(max-width: 475px) {
-  .container{
-    width: 380px;
+/* custom components */
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
 }

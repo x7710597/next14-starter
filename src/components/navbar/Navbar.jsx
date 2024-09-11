@@ -1,5 +1,4 @@
 import Links from "@/components/navbar/links/Links"
-import styles  from "@/components/navbar/navbar.module.css"
 import Link from "next/link"
 import { auth } from '@/lib/auth'
 
@@ -9,13 +8,13 @@ const Navbar =  async () => {
   // console.log(session)
 
   return (
-    <div className={styles.container}>
-      <Link href="/" className={styles.logo}> Logo</Link>
-        <div>
-          <Links session={session}/>
-          {/* Links component is a CSC hence can't handle async wait fnc, that's why we're passing auth() as props */}
-        </div>
-    </div>
+    <header>
+      <nav className="flex items-center py-8">
+        <Link href="/" className="font-roboto text-2xl text-secondary cursor-pointer"> Logo</Link>
+        <Links session={session}/>
+            {/* Links component is a CSC hence can't handle async wait fnc, that's why we're passing auth() as props */}
+      </nav>
+    </header>
   )
 }
 
