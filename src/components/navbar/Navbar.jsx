@@ -27,7 +27,7 @@ export default Navbar
 // {
 //   user: {
 //     name: 'Mia L',
-//     email: 'miapeisun@gmail.com',
+//     email: 'miapeisunagmail.com',
 //     image: 'https://avatars.githubusercontent.com/u/108651937?v=4'
 //   },
 // }

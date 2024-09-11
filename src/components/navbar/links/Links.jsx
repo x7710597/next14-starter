@@ -10,7 +10,7 @@ import { handleLogout } from '@/lib/action'
 const links = [
 
   {title: "Home Page",
-    path: "/",
+    path: "https://blogsite-next.netlify.app",
   },
   {title: "About",
     path: "/about"
@@ -32,29 +32,34 @@ const Links = ({session}) => {
       <div className={styles.links}>
         {links.map((link, index) => (
           <NavLink item={link} key={index} />
-        ))} {
-          session?.user ? (
+        ))}
+
+        {session?.user ? (
             <>
             { session.user?.isAdmin && ( <NavLink item={{title: "Admin", path:"/admin"}} /> )}
             <form action={handleLogout}>
               <button className={styles.logout}>Logout</button>
             </form>
             </>
-          ) : ( <NavLink item={{title: "Login", path:"/login"} }/> )
+          ) : ( <NavLink item={{title: "Login", path:"https://blogsite-next.netlify.app/login"} }/> )
         }
       </div>
-      <Image
-        src="/menu.png"
-        alt=""
-        width={30} height={30}
-        onClick={() => setOpen(prev => !prev)}
-        className={styles.menu}
-        />
-      { open && <div className={styles.mobileLinks}>
-        {links.map((link, index) => (
-            <NavLink item={link} key={index} />
-        )) }
-      </div> }
+      { open &&
+      <>
+        <Image
+          src="/menu.png"
+          alt=""
+          width={30} height={30}
+          onClick={() => setOpen(prev => !prev)}
+          className={styles.menu}
+          />
+        <div className={styles.mobileLinks}>
+          {links.map((link, index) => (
+              <NavLink item={link} key={index} />
+          )) }
+        </div>
+      </>
+      }
     </div>
   )
 }
